@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#title</title>
+  </head>
+  <body>
+    <h4>Login</h4>
+    <form action="/login" method="POST">
+      <fieldset>
+        <label for="inputUsername">Username</label>
+        <input type="text" name="username" id="inputUsername" />
+      </fieldset>
+      <fieldset>
+        <label for="inputPassword">Password</label>
+        <input type="password" name="password" id="inputPassword" />
+        <button type="button" id="btnShowPass">show</button>
+      </fieldset>
+      <button>Login</button>
+    </form>
+    #footer
+    <script>
+      const btnShowPass = document.getElementById("btnShowPass");
+
+      btnShowPass.addEventListener("click", (event) => {
+        const inputField = document.getElementById("inputPassword");
+        const isTypeText = inputField.getAttribute("type") === "text";
+        inputField.setAttribute("type", isTypeText ? "password" : "text");
+        btnShowPass.textContent = isTypeText ? "hide" : "show";
+      });
+    </script>
+    #error
+  </body>
+</html>
